@@ -3,7 +3,7 @@ package com.hyr.equipment.management.activity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.gigamole.sample.R;
+import com.hyr.equipment.management.R;
 
 public class BaseActivity extends AppCompatActivity {
 

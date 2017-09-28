@@ -1,15 +1,21 @@
 package com.hyr.equipment.management.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
-import com.gigamole.sample.R;
+import com.hyr.equipment.management.R;
 
-public class TestActivity extends AppCompatActivity {
+
+public class TestActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+
+        String s = getIntent().getStringExtra("infotest");
+
+        TextView tv = (TextView) findViewById(R.id.tvtest1);
+        tv.setText(s);
     }
 }

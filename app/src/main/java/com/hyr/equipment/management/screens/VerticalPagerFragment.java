@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.gigamole.infinitecycleviewpager.VerticalInfiniteCycleViewPager;
-import com.gigamole.sample.R;
+import com.hyr.equipment.management.R;
 import com.hyr.equipment.management.adapters.VerticalPagerAdapter;
 
 /**

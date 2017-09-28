@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.widget.Toast;
 
 import com.gigamole.navigationtabstrip.NavigationTabStrip;
-import com.gigamole.sample.R;
+import com.hyr.equipment.management.R;
 import com.hyr.equipment.management.adapters.MainPagerAdapter;
 import com.uuzuche.lib_zxing.activity.CodeUtils;
 

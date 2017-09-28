@@ -4,7 +4,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.gigamole.sample.R;
+import com.hyr.equipment.management.R;
 
 /**
  * Created by GIGAMOLE on 8/18/16.

@@ -10,9 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.gigamole.infinitecycleviewpager.VerticalInfiniteCycleViewPager;
-import com.gigamole.sample.R;
+import com.hyr.equipment.management.R;
 import com.hyr.equipment.management.activity.MainActivity;
 import com.hyr.equipment.management.activity.SecondActivity;
+import com.hyr.equipment.management.activity.TestActivity;
 import com.hyr.equipment.management.utils.UIUtils;
 import com.hyr.equipment.management.utils.Utils;
 
@@ -22,7 +23,7 @@ import com.hyr.equipment.management.utils.Utils;
  */
 public class HorizontalPagerAdapter extends PagerAdapter {
 
-    private MainActivity mainActivity=null;
+    private MainActivity mainActivity = null;
 
     private static final String TAG = "HorizontalPagerAdapter";
 
@@ -59,7 +60,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
         mIsTwoWay = isTwoWay;
-        this.mainActivity=mainActivity;
+        this.mainActivity = mainActivity;
     }
 
     @Override
@@ -87,13 +88,16 @@ public class HorizontalPagerAdapter extends PagerAdapter {
         } else {
             view = mLayoutInflater.inflate(R.layout.item, container, false);
             // TODO 处理点击事件 0~4
-            switch (position){
+            switch (position) {
                 case 0: // 查看用户基本信息
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.i(TAG, "查看用户基本信息: "+v+position);
-                            Toast.makeText(UIUtils.getContext(),"查看用户基本信息",Toast.LENGTH_SHORT).show();
+                            Log.i(TAG, "查看用户基本信息: " + v + position);
+                            Toast.makeText(UIUtils.getContext(), "查看用户基本信息", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(mainActivity, TestActivity.class);
+                            intent.putExtra("infotest", "查看用户基本信息");
+                            mainActivity.startActivity(intent);
                         }
                     });
                     break;
@@ -101,16 +105,16 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.i(TAG, "扫码使用: "+v+position);
-                            Toast.makeText(UIUtils.getContext(),"扫码使用",Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(UIUtils.getContext(), SecondActivity.class);
+                            Log.i(TAG, "扫码使用: " + v + position);
+                            Toast.makeText(UIUtils.getContext(), "扫码使用", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(mainActivity, SecondActivity.class);
                             //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // 打开新的TASK
                             /**
                              * 扫描跳转Activity RequestCode
                              */
                             final int REQUEST_CODE = 111;
 
-                            mainActivity.startActivityForResult(intent,REQUEST_CODE);
+                            mainActivity.startActivityForResult(intent, REQUEST_CODE);
                         }
                     });
                     break;
@@ -118,8 +122,11 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.i(TAG, "查看使用记录: "+v+position);
-                            Toast.makeText(UIUtils.getContext(),"查看使用记录",Toast.LENGTH_SHORT).show();
+                            Log.i(TAG, "查看使用记录: " + v + position);
+                            Toast.makeText(UIUtils.getContext(), "查看使用记录", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(mainActivity, TestActivity.class);
+                            intent.putExtra("infotest", "查看使用记录");
+                            mainActivity.startActivity(intent);
                         }
                     });
                     break;
@@ -127,8 +134,11 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.i(TAG, "使用事项: "+v+position);
-                            Toast.makeText(UIUtils.getContext(),"使用事项",Toast.LENGTH_SHORT).show();
+                            Log.i(TAG, "使用事项: " + v + position);
+                            Toast.makeText(UIUtils.getContext(), "使用事项", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(mainActivity, TestActivity.class);
+                            intent.putExtra("infotest", "使用事项");
+                            mainActivity.startActivity(intent);
                         }
                     });
                     break;
@@ -136,8 +146,9 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.i(TAG, "退出登录: "+v+position);
-                            Toast.makeText(UIUtils.getContext(),"退出登录",Toast.LENGTH_SHORT).show();
+                            Log.i(TAG, "退出登录: " + v + position);
+                            Toast.makeText(UIUtils.getContext(), "退出登录", Toast.LENGTH_SHORT).show();
+                            mainActivity.finish();
                         }
                     });
                     break;
