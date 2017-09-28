@@ -13,6 +13,8 @@ public class TestActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
+        // TODO 具体逻辑
+
         String s = getIntent().getStringExtra("infotest");
 
         TextView tv = (TextView) findViewById(R.id.tvtest1);
