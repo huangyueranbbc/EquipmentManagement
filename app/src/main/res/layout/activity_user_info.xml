@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F2"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/card_background"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="6dp"
+                    android:text="姓名"
+                    android:textColor="#9B9B9B"
+                    android:textSize="16.1dp" />
+
+                <TextView
+                    android:id="@+id/tv_name"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="22dp"
+                    android:paddingTop="6dp"
+                    android:text="成吉思汗"
+                    android:textColor="#7F7F7F"
+                    android:textSize="16.1dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="6dp"
+                    android:text="学号"
+                    android:textColor="#9B9B9B"
+                    android:textSize="16.1dp" />
+
+                <TextView
+                    android:id="@+id/tv_no"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="22dp"
+                    android:paddingTop="6dp"
+                    android:text="201620410666"
+                    android:textColor="#7F7F7F"
+                    android:textSize="16.1dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    android:gravity="left"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="6dp"
+                    android:paddingTop="6dp"
+                    android:text="班级"
+                    android:textColor="#9B9B9B"
+                    android:textSize="16.1dp" />
+
+                <TextView
+                    android:id="@+id/tv_class"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:paddingRight="22dp"
+                    android:paddingTop="6dp"
+                    android:text="16级计算机科学与技术"
+                    android:textColor="#7F7F7F"
+                    android:textSize="16.1dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#FFFFFF"
+        android:descendantFocusability="blocksDescendants"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="6dp"
+            android:gravity="center"
+            android:text="当前使用中的设备:"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <com.song.refresh_view.PullToRefreshView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/refreshView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="blocksDescendants"
+            tools:context="com.songxian.smilerefresh.MainActivity">
+
+            <ListView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></ListView>
+
+        </com.song.refresh_view.PullToRefreshView>
+
+
+    </LinearLayout>
+
+</LinearLayout>
