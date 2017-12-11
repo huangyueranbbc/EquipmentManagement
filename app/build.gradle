@@ -33,4 +33,24 @@ dependencies {
     compile 'org.jetbrains:annotations-java5:15.0'
     compile project(':lib-zxing')
     compile project(path: ':lib-zxing')
+    compile project(':refresh_view_library')
+    compile project(path: ':refresh_view_library')
+    // HTTP
+    compile files('libs/commons-codec-1.7.jar')
+    compile files('libs/commons-logging-1.1.1.jar')
+    compile files('libs/httpclient-4.2.2.jar')
+    compile files('libs/httpcore-4.2.2.jar')
+    compile files('libs/xUtils-2.6.14.jar')
+    compile files('libs/fluent-hc-4.2.2.jar')
+    compile files('libs/httpclient-cache-4.2.2.jar')
+    compile files('libs/httpmime-4.1.1.jar')
+    compile files('libs/jackson-annotations-2.4.0.jar')
+    compile files('libs/jackson-core-2.4.2.jar')
+    compile files('libs/jackson-databind-2.4.2.jar')
+    compile files('libs/jcore-android_v1.0.0.jar')
+    compile files('libs/jpush-android_v3.0.0.jar')
+    compile files('libs/locSDK_6.13.jar')
+    compile files('libs/gson-2.7.jar')
+    compile 'com.github.andyxialm:ColorDialog:1.0.0'
+    compile 'com.github.vatsaldesai92:MyDynamicToastLibrary:1.0.1'
 }

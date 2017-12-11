@@ -1,1 +1,1 @@
-include ':app', ':infinitecycleviewpager', ':lib-zxing'
+include ':app', ':infinitecycleviewpager', ':lib-zxing', ':refresh_view_library'

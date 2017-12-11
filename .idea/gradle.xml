@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/infinitecycleviewpager" />
             <option value="$PROJECT_DIR$/lib-zxing" />
+            <option value="$PROJECT_DIR$/refresh_view_library" />
           </set>
         </option>
         <option name="myModules">
@@ -19,6 +20,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/infinitecycleviewpager" />
             <option value="$PROJECT_DIR$/lib-zxing" />
+            <option value="$PROJECT_DIR$/refresh_view_library" />
           </set>
         </option>
       </GradleProjectSettings>

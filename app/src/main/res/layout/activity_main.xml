@@ -41,6 +41,7 @@
 
         <View
             android:layout_width="match_parent"
+            android:layout_margin="10dp"
             android:layout_height="20dp"
             android:background="@drawable/overlay_top"
             android:cacheColorHint="#00000000"/>
