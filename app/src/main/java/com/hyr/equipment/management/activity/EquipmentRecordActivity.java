@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.desai.vatsal.mydynamictoast.MyDynamicToast;
 import com.google.gson.Gson;
@@ -179,7 +178,7 @@ public class EquipmentRecordActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(HttpException e, String s) {
-                            Toast.makeText(UIUtils.getContext(), "数据加载失败", Toast.LENGTH_SHORT).show();
+                            MyDynamicToast.errorMessage(UIUtils.getContext(), "数据加载失败,请检查网络后重试!");
                             //dialog.dismiss();
                             isLoading = false;
                         }

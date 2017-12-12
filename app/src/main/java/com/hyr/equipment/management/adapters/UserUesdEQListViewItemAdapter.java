@@ -161,9 +161,6 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
                                                                         if (result != null) {// 获取成功
                                                                             isLoading = false;
 
-
-                                                                            MyDynamicToast.successMessage(_context, "结束成功!");
-
                                                                             PromptDialog promptDialog = new PromptDialog(_context)
                                                                                     .setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS)
                                                                                     .setAnimationEnable(true)

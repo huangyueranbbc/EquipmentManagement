@@ -102,8 +102,6 @@ public class SecondActivity extends BaseActivity {
             resultIntent.putExtras(bundle);
             SecondActivity.this.setResult(RESULT_OK, resultIntent);
 
-            // TODO 应该跳转到另一个activity
-
             // 访问网络
             if (!isLoading) {
                 if (StringUtils.isEmpty(result)) {

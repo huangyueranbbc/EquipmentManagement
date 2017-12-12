@@ -18,8 +18,10 @@ import com.hyr.equipment.management.R;
 import com.hyr.equipment.management.activity.EquipmentRecordActivity;
 import com.hyr.equipment.management.activity.LoginActivity;
 import com.hyr.equipment.management.activity.MainActivity;
+import com.hyr.equipment.management.activity.NoticeActivity;
 import com.hyr.equipment.management.activity.SecondActivity;
 import com.hyr.equipment.management.activity.TestActivity;
+import com.hyr.equipment.management.activity.UpdatePwdActivity;
 import com.hyr.equipment.management.activity.UserInfoActivity;
 import com.hyr.equipment.management.domain.LMSResult;
 import com.hyr.equipment.management.domain.TbEqUserEquipmentRecord;
@@ -293,9 +295,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.i(TAG, "使用事项: " + v + position);
-                            Intent intent = new Intent(mainActivity, TestActivity.class);
-                            intent.putExtra("infotest", "使用事项");
+                            Intent intent = new Intent(mainActivity, NoticeActivity.class);
                             mainActivity.startActivity(intent);
                         }
                     });
@@ -304,9 +304,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Log.i(TAG, "使用事项: " + v + position);
-                            Intent intent = new Intent(mainActivity, TestActivity.class);
-                            intent.putExtra("infotest", "修改密码");
+                            Intent intent = new Intent(mainActivity, UpdatePwdActivity.class);
                             mainActivity.startActivity(intent);
                         }
                     });

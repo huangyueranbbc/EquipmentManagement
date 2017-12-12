@@ -35,6 +35,8 @@ public class BaseActivity extends AppCompatActivity {
             permissions.add(Manifest.permission.READ_PHONE_STATE);
             permissions.add(Manifest.permission.ACCESS_NETWORK_STATE);
             permissions.add(Manifest.permission.CHANGE_WIFI_STATE);
+            permissions.add(Manifest.permission.CAMERA);
+            permissions.add(Manifest.permission.CLEAR_APP_CACHE);
             permissions.add(Manifest.permission.MOUNT_UNMOUNT_FILESYSTEMS);
 
             checkAndRequestPermissions(permissions);

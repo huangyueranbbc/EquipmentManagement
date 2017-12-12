@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.desai.vatsal.mydynamictoast.MyDynamicToast;
 import com.google.gson.Gson;
@@ -86,7 +85,7 @@ public class LoginActivity extends BaseActivity {
                                         TbUserExt userExt = gson.fromJson(responseInfo.result, new TypeToken<TbUserExt>() {
                                         }.getType()); // 登录返回结果
                                         if (userExt == null) { // 登录失败
-                                            Toast.makeText(LoginActivity.this, "用户名或密码错误", Toast.LENGTH_SHORT).show();
+                                            MyDynamicToast.errorMessage(UIUtils.getContext(), "用户名或密码错误,请重试!");
                                             isLoading = false;
                                         } else { // 登录成功
                                             // 保存用户登录信息
@@ -118,7 +117,7 @@ public class LoginActivity extends BaseActivity {
 
                                     @Override
                                     public void onFailure(HttpException e, String s) {
-                                        MyDynamicToast.errorMessage(UIUtils.getContext(), "登录失败,请检查网络后重拾!");
+                                        MyDynamicToast.errorMessage(UIUtils.getContext(), "登录失败,请检查网络后重试!");
                                         isLoading = false;
                                     }
                                 });
