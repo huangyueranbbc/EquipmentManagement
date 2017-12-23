@@ -1,0 +1,134 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:text="输入小组成员学号"
+            android:textSize="32dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/sn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <EditText
+            android:id="@+id/sn10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="请输入学号,没有则不填"
+            android:text=""
+            android:textSize="16dp" />
+
+        <Button
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="确认" />
+
+    </LinearLayout>
+
+</ScrollView>

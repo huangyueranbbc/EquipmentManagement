@@ -165,7 +165,7 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
                                                                                     .setDialogType(PromptDialog.DIALOG_TYPE_SUCCESS)
                                                                                     .setAnimationEnable(true)
                                                                                     .setTitleText("操作成功")
-                                                                                    .setContentText("成功录入设备使用记录!请开始使用!")
+                                                                                    .setContentText("停止使用成功!")
                                                                                     .setPositiveListener("确认", new PromptDialog.OnPositiveListener() {
                                                                                         @Override
                                                                                         public void onClick(PromptDialog _dialog) {

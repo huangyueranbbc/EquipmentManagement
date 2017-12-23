@@ -3,7 +3,7 @@ package com.hyr.equipment.management.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbEqSystemNotice implements Serializable{
+public class TbEqSystemNotice  implements Serializable{
     private Long id;
 
     private Long adminId;

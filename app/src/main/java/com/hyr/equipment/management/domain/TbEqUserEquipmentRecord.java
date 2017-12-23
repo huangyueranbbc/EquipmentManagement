@@ -3,94 +3,114 @@ package com.hyr.equipment.management.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbEqUserEquipmentRecord implements Serializable {
-	private Long recordId;
+public class TbEqUserEquipmentRecord  implements Serializable{
+    private Long recordId;
 
-	private Long userId;
+    private String userStudentNos;
 
-	private String userStudentNo;
+    private Long equipmentId;
 
-	private Long equipmentId;
+    private String equipmentName;
 
-	private String equipmentName;
+    private String userNames;
 
-	private String userName;
+    private String userClasses;
 
-	private Integer equipmentStatus;
+    private String room;
 
-	private Date starttime;
+    private Integer userNums;
 
-	private Date endtime;
+    private Integer equipmentStatus;
 
-	public Long getRecordId() {
-		return recordId;
-	}
+    private Date starttime;
 
-	public void setRecordId(Long recordId) {
-		this.recordId = recordId;
-	}
+    private Date endtime;
 
-	public Long getUserId() {
-		return userId;
-	}
+    public Long getRecordId() {
+        return recordId;
+    }
 
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
+    public void setRecordId(Long recordId) {
+        this.recordId = recordId;
+    }
 
-	public String getUserStudentNo() {
-		return userStudentNo;
-	}
+    public String getUserStudentNos() {
+        return userStudentNos;
+    }
 
-	public void setUserStudentNo(String userStudentNo) {
-		this.userStudentNo = userStudentNo == null ? null : userStudentNo.trim();
-	}
+    public void setUserStudentNos(String userStudentNos) {
+        this.userStudentNos = userStudentNos == null ? null : userStudentNos.trim();
+    }
 
-	public Long getEquipmentId() {
-		return equipmentId;
-	}
+    public Long getEquipmentId() {
+        return equipmentId;
+    }
 
-	public void setEquipmentId(Long equipmentId) {
-		this.equipmentId = equipmentId;
-	}
+    public void setEquipmentId(Long equipmentId) {
+        this.equipmentId = equipmentId;
+    }
 
-	public String getEquipmentName() {
-		return equipmentName;
-	}
+    public String getEquipmentName() {
+        return equipmentName;
+    }
 
-	public void setEquipmentName(String equipmentName) {
-		this.equipmentName = equipmentName == null ? null : equipmentName.trim();
-	}
+    public void setEquipmentName(String equipmentName) {
+        this.equipmentName = equipmentName == null ? null : equipmentName.trim();
+    }
 
-	public String getUserName() {
-		return userName;
-	}
+    public String getUserNames() {
+        return userNames;
+    }
 
-	public void setUserName(String userName) {
-		this.userName = userName == null ? null : userName.trim();
-	}
+    public void setUserNames(String userNames) {
+        this.userNames = userNames == null ? null : userNames.trim();
+    }
 
-	public Integer getEquipmentStatus() {
-		return equipmentStatus;
-	}
+    public String getUserClasses() {
+        return userClasses;
+    }
 
-	public void setEquipmentStatus(Integer equipmentStatus) {
-		this.equipmentStatus = equipmentStatus;
-	}
+    public void setUserClasses(String userClasses) {
+        this.userClasses = userClasses == null ? null : userClasses.trim();
+    }
 
-	public Date getStarttime() {
-		return starttime;
-	}
+    public String getRoom() {
+        return room;
+    }
 
-	public void setStarttime(Date starttime) {
-		this.starttime = starttime;
-	}
+    public void setRoom(String room) {
+        this.room = room == null ? null : room.trim();
+    }
 
-	public Date getEndtime() {
-		return endtime;
-	}
+    public Integer getUserNums() {
+        return userNums;
+    }
 
-	public void setEndtime(Date endtime) {
-		this.endtime = endtime;
-	}
+    public void setUserNums(Integer userNums) {
+        this.userNums = userNums;
+    }
+
+    public Integer getEquipmentStatus() {
+        return equipmentStatus;
+    }
+
+    public void setEquipmentStatus(Integer equipmentStatus) {
+        this.equipmentStatus = equipmentStatus;
+    }
+
+    public Date getStarttime() {
+        return starttime;
+    }
+
+    public void setStarttime(Date starttime) {
+        this.starttime = starttime;
+    }
+
+    public Date getEndtime() {
+        return endtime;
+    }
+
+    public void setEndtime(Date endtime) {
+        this.endtime = endtime;
+    }
 }

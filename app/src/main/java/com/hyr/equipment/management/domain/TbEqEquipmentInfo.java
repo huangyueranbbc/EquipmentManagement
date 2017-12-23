@@ -2,7 +2,7 @@ package com.hyr.equipment.management.domain;
 
 import java.io.Serializable;
 
-public class TbEqEquipmentInfo implements Serializable {
+public class TbEqEquipmentInfo  implements Serializable{
     private Long equipmentId;
 
     private String equipmentName;
@@ -10,6 +10,8 @@ public class TbEqEquipmentInfo implements Serializable {
     private String equipmentParam;
 
     private String equipmentDescribe;
+
+    private String equipmentRoomName;
 
     private Integer equipmentStatus;
 
@@ -45,6 +47,14 @@ public class TbEqEquipmentInfo implements Serializable {
 
     public void setEquipmentDescribe(String equipmentDescribe) {
         this.equipmentDescribe = equipmentDescribe == null ? null : equipmentDescribe.trim();
+    }
+
+    public String getEquipmentRoomName() {
+        return equipmentRoomName;
+    }
+
+    public void setEquipmentRoomName(String equipmentRoomName) {
+        this.equipmentRoomName = equipmentRoomName == null ? null : equipmentRoomName.trim();
     }
 
     public Integer getEquipmentStatus() {

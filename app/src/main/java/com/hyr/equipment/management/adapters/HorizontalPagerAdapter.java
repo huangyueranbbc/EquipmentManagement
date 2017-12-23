@@ -15,16 +15,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.hyr.equipment.management.R;
-import com.hyr.equipment.management.activity.EquipmentRecordActivity;
 import com.hyr.equipment.management.activity.LoginActivity;
 import com.hyr.equipment.management.activity.MainActivity;
 import com.hyr.equipment.management.activity.NoticeActivity;
 import com.hyr.equipment.management.activity.SecondActivity;
-import com.hyr.equipment.management.activity.TestActivity;
 import com.hyr.equipment.management.activity.UpdatePwdActivity;
 import com.hyr.equipment.management.activity.UserInfoActivity;
 import com.hyr.equipment.management.domain.LMSResult;
-import com.hyr.equipment.management.domain.TbEqUserEquipmentRecord;
 import com.hyr.equipment.management.domain.TbEqUserInfo;
 import com.hyr.equipment.management.domain.TbUserExt;
 import com.hyr.equipment.management.domain.UserInfoVo;
@@ -41,7 +38,6 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 
 import java.security.Timestamp;
-import java.util.ArrayList;
 import java.util.Random;
 
 import cn.refactor.lib.colordialog.ColorDialog;
@@ -69,10 +65,10 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                     R.drawable.ic_erweima,
                     "扫码使用"
             ),
-            new Utils.LibraryObject(
-                    R.drawable.ic_usereqrecords,
-                    "用户使用记录"
-            ),
+//            new Utils.LibraryObject(
+//                    R.drawable.ic_usereqrecords,
+//                    "用户使用记录"
+//            ),
             new Utils.LibraryObject(
                     R.drawable.ic_warn,
                     "注意事项"
@@ -207,7 +203,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                         }
                     });
                     break;
-                case 2: // 查看使用记录
+                /* case 2: // 查看使用记录
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -290,8 +286,8 @@ public class HorizontalPagerAdapter extends PagerAdapter {
 
                         }
                     });
-                    break;
-                case 3: // 使用事项
+                    break;*/
+                case 2: // 使用事项
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -300,7 +296,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                         }
                     });
                     break;
-                case 4: // 修改密码
+                case 3: // 修改密码
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -309,7 +305,7 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                         }
                     });
                     break;
-                case 5: // 退出登录
+                case 4: // 退出登录
                     view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {

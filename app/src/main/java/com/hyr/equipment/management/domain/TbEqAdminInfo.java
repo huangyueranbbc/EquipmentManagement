@@ -2,7 +2,7 @@ package com.hyr.equipment.management.domain;
 
 import java.io.Serializable;
 
-public class TbEqAdminInfo  implements Serializable {
+public class TbEqAdminInfo implements Serializable{
     private Long adminId;
 
     private Long adminUsername;

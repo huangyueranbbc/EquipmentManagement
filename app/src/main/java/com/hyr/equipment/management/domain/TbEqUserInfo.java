@@ -2,7 +2,7 @@ package com.hyr.equipment.management.domain;
 
 import java.io.Serializable;
 
-public class TbEqUserInfo  implements Serializable {
+public class TbEqUserInfo  implements Serializable{
     private Long userId;
 
     private String userStudentNo;
