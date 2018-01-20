@@ -3,6 +3,7 @@ package com.hyr.equipment.management.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.desai.vatsal.mydynamictoast.MyDynamicToast;
 import com.google.gson.Gson;
@@ -26,14 +27,29 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import java.security.Timestamp;
 import java.util.Random;
 
+import id.arieridwan.lib.PageLoader;
+
 public class LaunchActivity extends BaseActivity {
 
     private static final String TAG = "LaunchActivity";
+
+    public PageLoader pageLoader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
+
+        pageLoader = (PageLoader) findViewById(R.id.pageloader);
+        pageLoader.setOnRetry(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                pageLoader.startProgress();
+            }
+        });
+        // pageLoader.setImageLoading(); // TODO 设置loading图标
+        pageLoader.setLoadingAnimationMode(pageLoader.FLIP_MODE);
+        pageLoader.startProgress();
 
         // TODO 判断是否登录
         // 未登录 跳转到登录界面
@@ -44,6 +60,7 @@ public class LaunchActivity extends BaseActivity {
         Log.i(TAG, "onAnimationEnd: " + userExtJson);
         if (StringUtils.isEmpty(userExtJson)) { // 没有登录 跳转到登录页面
             startActivity(new Intent(LaunchActivity.this, LoginActivity.class));
+            pageLoader.stopProgress();
             LaunchActivity.this.finish();
         } else { // 有登录记录 取网络中验证
             TbUserExt userExt = gson.fromJson(userExtJson, new TypeToken<TbUserExt>() {
@@ -78,6 +95,7 @@ public class LaunchActivity extends BaseActivity {
 
                         @Override
                         public void onFailure(HttpException e, String s) {
+                            pageLoader.stopProgressAndFailed();
                             MyDynamicToast.errorMessage(UIUtils.getContext(), "登录失败,请重新登录!");
                             startActivity(new Intent(LaunchActivity.this, LoginActivity.class));
                             LaunchActivity.this.finish();
