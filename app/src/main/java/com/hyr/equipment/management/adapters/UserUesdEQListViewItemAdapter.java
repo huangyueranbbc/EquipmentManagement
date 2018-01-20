@@ -79,7 +79,7 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
         TextView tv1 = (TextView) convertView.findViewById(R.id.textView1);
         tv1.setText(mData.get(position).get("eq_name").toString());
         TextView tv2 = (TextView) convertView.findViewById(R.id.textView2);
-        tv2.setText(mData.get(position).get("eq_starttime").toString());
+        tv2.setText(mData.get(position).get("eq_starttime"));
         TextView tv3 = (TextView) convertView.findViewById(R.id.textView3);
         tv3.setText(mData.get(position).get("eq_status").toString());
 
@@ -95,14 +95,12 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
                 ColorDialog dialog = new ColorDialog(_context);
                 dialog.setAnimationEnable(true);
                 dialog.setTitle("结束设备");
-                dialog.setContentImage(_context.getResources().getDrawable(R.drawable.sample_img));
                 dialog.setContentText("确认结束使用该设备吗?");
                 dialog.setCancelable(false); // 取消周围点击事件
                 dialog.setPositiveListener("确定", new ColorDialog.OnPositiveListener() {
                     @Override
                     public void onClick(final ColorDialog colorDialog) {
 
-                        // 判断是否登录
                         final Gson gson = new GsonBuilder().registerTypeAdapter(Timestamp.class, new TimestampTypeAdapter()).setDateFormat("yyyy-MM-dd HH:mm:ss").create();
                         String userExtJson = CacheUtils.getCacheNotiming(GlobalValue.TBUSEREXTINFO);
 
@@ -131,7 +129,10 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
                                                 // 使用成功
                                                 LMSResult result = gson.fromJson(responseInfo.result, new TypeToken<LMSResult>() {
                                                 }.getType());
-                                                if (result.getStatus() == 200) {
+                                                if (420 == result.getStatus()) { // 不是组长
+                                                    // 设备使用取消失败
+                                                    MyDynamicToast.errorMessage(_context, "操作失败,该操作只允许组长进行!");
+                                                } else if (result.getStatus() == 200) {
                                                     // 设备使用取消成功
                                                     // 重新获取网络数据 更新ListView
                                                     if (!isLoading) {
@@ -153,7 +154,6 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
 
                                                                     @Override
                                                                     public void onSuccess(ResponseInfo<String> responseInfo) {
-                                                                        // 得到图书馆list集合
                                                                         final UserInfoVo result = gson.fromJson(responseInfo.result, new TypeToken<UserInfoVo>() {
                                                                         }.getType());
                                                                         Log.i(TAG, "onSuccess: " + gson.toString());
@@ -179,7 +179,6 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
 
                                                                             promptDialog.setCancelable(false);
                                                                             dialog.dismiss();
-                                                                            colorDialog.dismiss();
                                                                             promptDialog.show();
 
 
@@ -187,6 +186,7 @@ public class UserUesdEQListViewItemAdapter extends BaseAdapter {
                                                                             dialog.dismiss();
                                                                             MyDynamicToast.errorMessage(_context, "服务错误!");
                                                                         }
+                                                                        colorDialog.dismiss();
 
                                                                     }
 

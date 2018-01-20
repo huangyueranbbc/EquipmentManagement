@@ -128,7 +128,7 @@ public class SecondActivity extends BaseActivity {
                     HttpUtils http = new HttpUtils();
                     http.send(HttpRequest.HttpMethod.GET,
                             url, params,
-                             new RequestCallBack<String>() {
+                            new RequestCallBack<String>() {
 
                                 @Override
                                 public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -143,9 +143,22 @@ public class SecondActivity extends BaseActivity {
                                     } else { // 获取设备状态成功
                                         // 根据设备状态进行判断
                                         Integer status = eqEquipmentInfo.getEquipmentUsedStatus(); //设备使用状态 1使用中 0未使用
-                                        if (status == 1) { // 使用中
-
-                                            // TODO 提示用户该设备正在使用中
+                                        if (0 == eqEquipmentInfo.getEquipmentStatus()) { // 设备维修中
+                                            PromptDialog promptDialog = new PromptDialog(SecondActivity.this)
+                                                    .setDialogType(PromptDialog.DIALOG_TYPE_WARNING)
+                                                    .setAnimationEnable(true)
+                                                    .setTitleText("操作失败")
+                                                    .setContentText("该设备正在检修中!")
+                                                    .setPositiveListener("确认", new PromptDialog.OnPositiveListener() {
+                                                        @Override
+                                                        public void onClick(PromptDialog _dialog) {
+                                                            _dialog.dismiss();
+                                                            restartErWeiMaSaoMiaoNoWait();
+                                                        }
+                                                    });
+                                            promptDialog.setCancelable(false);
+                                            promptDialog.show();
+                                        } else if (status == 1) { // 使用中
                                             PromptDialog promptDialog = new PromptDialog(SecondActivity.this)
                                                     .setDialogType(PromptDialog.DIALOG_TYPE_WARNING)
                                                     .setAnimationEnable(true)
@@ -231,16 +244,16 @@ public class SecondActivity extends BaseActivity {
         if (requestCode == 0 && resultCode == 0) {
             // 取出Intent里的数据
             HashSet studentNoList = (HashSet) data.getSerializableExtra("studentNoList");
-            studentList =new ArrayList(studentNoList);
+            studentList = new ArrayList(studentNoList);
             // 判断是否登录
             final Gson gson = new GsonBuilder().registerTypeAdapter(Timestamp.class, new TimestampTypeAdapter()).setDateFormat("yyyy-MM-dd HH:mm:ss").create();
             String userExtJson = CacheUtils.getCacheNotiming(GlobalValue.TBUSEREXTINFO);
-            if(!StringUtils.isEmpty(userExtJson)){ // 有用户登录信息
+            if (!StringUtils.isEmpty(userExtJson)) { // 有用户登录信息
                 TbUserExt userExt = gson.fromJson(userExtJson, new TypeToken<TbUserExt>() {
                 }.getType());
                 // 加上登录用户的学号
-                studentList.add(0,userExt.getUser().getUserStudentNo());
-            }else { // 没有登录
+                studentList.add(0, userExt.getUser().getUserStudentNo());
+            } else { // 没有登录
                 startActivity(new Intent(SecondActivity.this, LoginActivity.class));
                 SecondActivity.this.finish();
             }
@@ -253,7 +266,6 @@ public class SecondActivity extends BaseActivity {
             dialog.setTitle("是否使用该设备");
             dialog.setAnimationEnable(true);
             dialog.setContentText("确认开始使用该设备?");
-            dialog.setContentImage(getResources().getDrawable(R.drawable.sample_img));
             dialog.setPositiveListener("确认", new ColorDialog.OnPositiveListener() {
                 @Override
                 public void onClick(final ColorDialog dialog) {
@@ -269,9 +281,9 @@ public class SecondActivity extends BaseActivity {
                             TbUserExt userExt = gson.fromJson(userExtJson, new TypeToken<TbUserExt>() {
                             }.getType());
                             // studentList去重
-                            ArrayList<String> newResultList=new ArrayList<String>();
-                            for(int i=0;i<studentList.size();i++){
-                                if(!newResultList.contains(studentList.get(i))){
+                            ArrayList<String> newResultList = new ArrayList<String>();
+                            for (int i = 0; i < studentList.size(); i++) {
+                                if (!newResultList.contains(studentList.get(i))) {
                                     newResultList.add(studentList.get(i).toString());
                                 }
                             }
@@ -324,7 +336,7 @@ public class SecondActivity extends BaseActivity {
                                                 promptDialog.setCancelable(false);
                                                 dialog.dismiss();
                                                 promptDialog.show();
-                                            }else if(result.getStatus() == 408){ // 空记录 可能是学号填错了或者没找到该设备
+                                            } else if (result.getStatus() == 408) { // 空记录 可能是学号填错了或者没找到该设备
                                                 // 使用失败 提示用户
                                                 PromptDialog promptDialog = new PromptDialog(SecondActivity.this)
                                                         .setDialogType(PromptDialog.DIALOG_TYPE_WRONG)

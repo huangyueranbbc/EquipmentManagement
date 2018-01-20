@@ -3,7 +3,7 @@ package com.hyr.equipment.management.domain;
 import java.io.Serializable;
 import java.util.Date;
 
-public class TbEqUserEquipmentRecord  implements Serializable{
+public class TbEqUserEquipmentRecord implements Serializable {
     private Long recordId;
 
     private String userStudentNos;
@@ -12,11 +12,11 @@ public class TbEqUserEquipmentRecord  implements Serializable{
 
     private String equipmentName;
 
+    private String equipmentRoomName;
+
     private String userNames;
 
     private String userClasses;
-
-    private String room;
 
     private Integer userNums;
 
@@ -58,6 +58,14 @@ public class TbEqUserEquipmentRecord  implements Serializable{
         this.equipmentName = equipmentName == null ? null : equipmentName.trim();
     }
 
+    public String getEquipmentRoomName() {
+        return equipmentRoomName;
+    }
+
+    public void setEquipmentRoomName(String equipmentRoomName) {
+        this.equipmentRoomName = equipmentRoomName == null ? null : equipmentRoomName.trim();
+    }
+
     public String getUserNames() {
         return userNames;
     }
@@ -72,14 +80,6 @@ public class TbEqUserEquipmentRecord  implements Serializable{
 
     public void setUserClasses(String userClasses) {
         this.userClasses = userClasses == null ? null : userClasses.trim();
-    }
-
-    public String getRoom() {
-        return room;
-    }
-
-    public void setRoom(String room) {
-        this.room = room == null ? null : room.trim();
     }
 
     public Integer getUserNums() {
@@ -112,5 +112,22 @@ public class TbEqUserEquipmentRecord  implements Serializable{
 
     public void setEndtime(Date endtime) {
         this.endtime = endtime;
+    }
+
+    @Override
+    public String toString() {
+        return "TbEqUserEquipmentRecord{" +
+                "recordId=" + recordId +
+                ", userStudentNos='" + userStudentNos + '\'' +
+                ", equipmentId=" + equipmentId +
+                ", equipmentName='" + equipmentName + '\'' +
+                ", equipmentRoomName='" + equipmentRoomName + '\'' +
+                ", userNames='" + userNames + '\'' +
+                ", userClasses='" + userClasses + '\'' +
+                ", userNums=" + userNums +
+                ", equipmentStatus=" + equipmentStatus +
+                ", starttime=" + starttime +
+                ", endtime=" + endtime +
+                '}';
     }
 }

@@ -37,7 +37,8 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.UpdatePwdActivity" />
         <activity android:name=".activity.NoticeActivity" />
-        <activity android:name=".activity.InputStuNoActivity"></activity>
+        <activity android:name=".activity.InputStuNoActivity" />
+        <activity android:name=".activity.RecordDetailActivity"></activity>
     </application>
 
 </manifest>

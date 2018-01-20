@@ -3,6 +3,7 @@ package com.hyr.equipment.management.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -100,5 +101,17 @@ public class InputStuNoActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            // 设置该SelectCityActivity结果码，并设置结束之后退回的Activity
+            InputStuNoActivity.this.setResult(1);
+            // 结束SelectCityActivity
+            InputStuNoActivity.this.finish();
+            return true;
+        }
+        return false;
     }
 }

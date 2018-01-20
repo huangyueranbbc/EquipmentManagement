@@ -7,8 +7,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.desai.vatsal.mydynamictoast.MyDynamicToast;
 import com.google.gson.Gson;
@@ -33,6 +35,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.song.refresh_view.PullToRefreshView;
 
 import java.security.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -97,7 +100,7 @@ public class UserInfoActivity extends BaseActivity {
         mListView.addHeaderView(headerView);
 
         //插入用户设备使用记录数据
-        List<TbEqUserEquipmentRecord> records = userInfoVo.getEqUserEquipmentRecords();
+        final List<TbEqUserEquipmentRecord> records = userInfoVo.getEqUserEquipmentRecords();
         Log.i(TAG, "records: " + records);
         Log.i(TAG, "records size: " + records.size());
 
@@ -106,7 +109,9 @@ public class UserInfoActivity extends BaseActivity {
         for (TbEqUserEquipmentRecord r : records) {
             HashMap<String, String> map = new HashMap<>();
             map.put("eq_name", r.getEquipmentName());
-            map.put("eq_starttime", r.getStarttime().toLocaleString());
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String date = formatter.format(r.getStarttime());
+            map.put("eq_starttime", date);
             map.put("record_id", r.getRecordId() + ""); // 设备记录ID
 
             if (r.getEquipmentStatus() == 1) {
@@ -117,6 +122,19 @@ public class UserInfoActivity extends BaseActivity {
 
             mData.add(map);
         }
+
+        // 点击事件
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(getApplicationContext(), "position:" + position + " id:" + id, Toast.LENGTH_SHORT).show();
+                TbEqUserEquipmentRecord tbEqUserEquipmentRecord = records.get(position-1);
+                Intent intent = new Intent(getApplicationContext(), RecordDetailActivity.class);
+                intent.putExtra("record", tbEqUserEquipmentRecord);
+                startActivity(intent);
+            }
+        });
+
         mAdapter = new UserUesdEQListViewItemAdapter(this, mData);
         mListView.setAdapter(mAdapter);
 

@@ -5,11 +5,13 @@ import java.io.Serializable;
 public class TbEqAdminInfo implements Serializable{
     private Long adminId;
 
-    private Long adminUsername;
+    private String adminUsername;
 
-    private String adminPassword;
+    private String adminLab;
 
     private String adminName;
+
+    private String adminPassword;
 
     public Long getAdminId() {
         return adminId;
@@ -19,20 +21,20 @@ public class TbEqAdminInfo implements Serializable{
         this.adminId = adminId;
     }
 
-    public Long getAdminUsername() {
+    public String getAdminUsername() {
         return adminUsername;
     }
 
-    public void setAdminUsername(Long adminUsername) {
-        this.adminUsername = adminUsername;
+    public void setAdminUsername(String adminUsername) {
+        this.adminUsername = adminUsername == null ? null : adminUsername.trim();
     }
 
-    public String getAdminPassword() {
-        return adminPassword;
+    public String getAdminLab() {
+        return adminLab;
     }
 
-    public void setAdminPassword(String adminPassword) {
-        this.adminPassword = adminPassword == null ? null : adminPassword.trim();
+    public void setAdminLab(String adminLab) {
+        this.adminLab = adminLab == null ? null : adminLab.trim();
     }
 
     public String getAdminName() {
@@ -41,5 +43,13 @@ public class TbEqAdminInfo implements Serializable{
 
     public void setAdminName(String adminName) {
         this.adminName = adminName == null ? null : adminName.trim();
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
+    }
+
+    public void setAdminPassword(String adminPassword) {
+        this.adminPassword = adminPassword == null ? null : adminPassword.trim();
     }
 }

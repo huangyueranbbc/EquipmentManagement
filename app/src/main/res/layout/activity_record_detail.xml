@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.hyr.equipment.management.activity.RecordDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:paddingTop="5dp">
+
+        <Button
+            android:id="@+id/btn02"
+            android:layout_width="20dp"
+            android:layout_height="24dp"
+            android:background="@drawable/btn02"
+            android:gravity="center" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:gravity="left"
+                android:paddingLeft="30dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:text="设备名称"
+                android:textColor="#9B9B9B"
+                android:textSize="16.1dp" />
+
+            <TextView
+                android:id="@+id/tv_eqName"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="22dp"
+                android:paddingTop="6dp"
+                android:text="21"
+                android:textColor="#7F7F7F"
+                android:textSize="16.1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:paddingLeft="30dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:text="实验室"
+                android:textColor="#9B9B9B"
+                android:textSize="16.1dp" />
+
+            <TextView
+                android:id="@+id/tv_room"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="22dp"
+                android:paddingTop="6dp"
+                android:text="42050199503251111"
+                android:textColor="#7F7F7F"
+                android:textSize="16.1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:gravity="left"
+                android:paddingLeft="30dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:text="开始时间"
+                android:textColor="#9B9B9B"
+                android:textSize="16.1dp" />
+
+            <TextView
+                android:id="@+id/tv_startTime"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="22dp"
+                android:paddingTop="6dp"
+                android:text="女"
+                android:textColor="#7F7F7F"
+                android:textSize="16.1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:gravity="left"
+                android:paddingLeft="30dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:text="使用状态"
+                android:textColor="#9B9B9B"
+                android:textSize="16.1dp" />
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="22dp"
+                android:paddingTop="6dp"
+                android:text="总经理"
+                android:textColor="#7F7F7F"
+                android:textSize="16.1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:paddingLeft="30dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:text="组长"
+                android:textColor="#9B9B9B"
+                android:textSize="16.1dp" />
+
+            <TextView
+                android:id="@+id/tv_groupLeader"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="22dp"
+                android:paddingTop="6dp"
+                android:text="20162011001"
+                android:textColor="#7F7F7F"
+                android:textSize="16.1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:paddingLeft="30dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:text="组员"
+                android:textColor="#9B9B9B"
+                android:textSize="16.1dp" />
+
+            <TextView
+                android:id="@+id/tv_member"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="22dp"
+                android:paddingTop="6dp"
+                android:text="42050199503251111"
+                android:textColor="#7F7F7F"
+                android:textSize="16.1dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:paddingLeft="30dp"
+                android:paddingRight="6dp"
+                android:paddingTop="6dp"
+                android:text="班级"
+                android:textColor="#9B9B9B"
+                android:textSize="16.1dp" />
+
+            <TextView
+                android:id="@+id/tv_class"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:paddingRight="22dp"
+                android:paddingTop="6dp"
+                android:text="42050199503251111"
+                android:textColor="#7F7F7F"
+                android:textSize="16.1dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.2dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="6dp"
+        android:background="#A7A7A7"></View>
+
+    <ru.katso.livebutton.LiveButton xmlns:livebutton="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:text="报修"
+        android:textColor="#ffffff"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        livebutton:backgroundColor="#F57F76"
+        livebutton:corners="4dp"
+        livebutton:normalHeight="6dp"
+        livebutton:pressedHeight="2dp"
+        livebutton:shadowColor="#b16262" />
+
+</LinearLayout>

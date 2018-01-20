@@ -3,6 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
     android:orientation="horizontal">
 
     <TextView
@@ -26,11 +27,23 @@
         android:layout_weight="1"
         android:text="使用中" />
 
-    <Button
+    <ru.katso.livebutton.LiveButton xmlns:livebutton="http://schemas.android.com/apk/res-auto"
         android:id="@+id/btn_stopUse"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="结束" />
+        android:clickable="true"
+        android:focusable="false"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:text="结束"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        livebutton:backgroundColor="#F57F76"
+        livebutton:corners="4dp"
+        livebutton:normalHeight="6dp"
+        livebutton:pressedHeight="2dp"
+        livebutton:shadowColor="#b16262" />
 
 </LinearLayout>

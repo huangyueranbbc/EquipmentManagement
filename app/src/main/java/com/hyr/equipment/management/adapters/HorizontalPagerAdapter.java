@@ -316,7 +316,6 @@ public class HorizontalPagerAdapter extends PagerAdapter {
                             dialog.setTitle("退出登录");
                             dialog.setAnimationEnable(true);
                             dialog.setContentText("确认退出该账号?");
-                            dialog.setContentImage(mainActivity.getResources().getDrawable(R.drawable.sample_img));
                             dialog.setPositiveListener("确认", new ColorDialog.OnPositiveListener() {
                                 @Override
                                 public void onClick(final ColorDialog dialog) {
